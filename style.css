@@ -426,7 +426,7 @@
 
     }
 }
-@media (min-width: 1280px) {
+@media (min-width: 951px) {
     body {
         display: flex;
         flex-direction: column;
