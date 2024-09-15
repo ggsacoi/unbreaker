@@ -1,7 +1,7 @@
-addEventListener('DOMContentLoaded', () => {
- if(window.innerWidth > 950 ) {
+ addEventListener('DOMContentLoaded', () => {
+  if(window.innerWidth > 950 ) {
      window.open('nondispo.html', '_top');
- }
+  }
 
     const section = document.querySelector('section');
     const menu = document.querySelector(".options");
