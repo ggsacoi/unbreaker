@@ -85,11 +85,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
         lielement.forEach(({name, url}) => {
             if(name) {
+                const checker = document.getElementById("see");
                 const opt = document.createElement("li");
                 opt.textContent = name;
                 opt.addEventListener('click', () =>{
-                    window.open(url, '_top');
-                })
+                    checker.checked = false;
+                setTimeout (() => {
+                window.open(url, '_top');
+                }, 300);
+                });
                 list.appendChild(opt);
             }
         });
