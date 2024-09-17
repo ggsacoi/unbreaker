@@ -3,7 +3,7 @@ body {
     height: min-content;
 }
     #contact {
-    padding: 10rem 0;
+    padding: 10rem 2rem;
     min-height: 75vh;
     background-size: 10rem;
     background-position: center;
