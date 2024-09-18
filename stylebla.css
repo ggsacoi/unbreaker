@@ -126,6 +126,5 @@ body {
  }
  #footer {
     top: 0;
-    height: max-content;
-    max-height: 25vh;
+    min-height: 25vh;
  }
