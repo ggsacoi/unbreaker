@@ -127,4 +127,5 @@ body {
  #footer {
     top: 0;
     height: max-content;
+    max-height: cover;
  }
