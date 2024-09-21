@@ -29,6 +29,7 @@ body {
     justify-items: center;
     gap: 7px;
     background-color: gray;
+    border-radius: 7px;
     opacity: 1;
 }
 
@@ -75,8 +76,9 @@ body {
 #envoi {
     background-color: rgb(241, 36, 36);
     border: solid 1px black;
-    width: min-content;
-    padding: 0 10vw 0 10vw;
+    width: 90px;
+    display: flex;
+    align-items: center;
     border-radius: 10px;
     margin-bottom: 15px;
 }
