@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function() {
         list.className = "listoptions";
         const lielement = [
             {name:'PRINCIPAL', url:"index.html"},
-            {name:'POUR ECRAN', url:"catalogue.html"},
+            {name:'DE SOLEIL', url:"catalogue.html"},
             {name:'CONTACT', url:"#footer"},
             {name:'SETTINGS', url:"settings.html"},
         ];
