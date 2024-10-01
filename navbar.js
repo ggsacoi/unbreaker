@@ -1,5 +1,34 @@
-// const nasilisi = document.querySelector('.numbers');
-document.addEventListener("DOMContentLoaded", function() {
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, doc, getDocs, collection, addDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCdxlwg8vgSet4ZX7CD9xzc_gsPif5uJbY",
+    authDomain: "thebiggestone-6e5ef.firebaseapp.com",
+    projectId: "thebiggestone-6e5ef",
+    storageBucket: "thebiggestone-6e5ef.appspot.com",
+    messagingSenderId: "942794830712",
+    appId: "1:942794830712:web:14b37d79f27c63d543ce8d",
+    measurementId: "G-HB7VWE6XD9"
+  };
+
+// Initialize Firebase
+async function getUsers() {
+const usersData = [];
+const app = initializeApp(firebaseConfig);
+const db = getFirestore();
+const docRef = collection(db,"Users");
+const docsSnap = await getDocs(docRef);
+docsSnap.forEach((doc) => {
+    const userData = doc.data();
+    usersData.push(userData);
+});
+return usersData;
+}
+getUsers();
+async function initializeNavbar() {
+    const users = await getUsers();
+    const currentUser = JSON.parse(sessionStorage.getItem('ContentUser'));
 
     // let nayebité = localStorage.getItem('text');
     // nasilisi.textContent = nayebité;
@@ -76,11 +105,13 @@ document.addEventListener("DOMContentLoaded", function() {
         options.className = "options";
         const list = document.createElement("ul");
         list.className = "listoptions";
+        const user = users.find(u => u.uid === currentUser?.uid);
         const lielement = [
-            {name:'PRINCIPAL', url:"index.html"},
-            {name:'POUR ECRAN', url:"catalogue.html"},
-            {name:'CONTACT', url:"#footer"},
-            {name:'SETTINGS', url:"settings.html"},
+            {name:user?.firstname, url:"Mervie.html"},
+            {name:'principal', url:"index.html"},
+            {name:'pour ecran', url:"catalogue.html"},
+            {name:'settings', url:"settings.html"},
+            {name:'contact', url:"#footer"},
         ];
 
         lielement.forEach(({name, url}) => {
@@ -97,9 +128,40 @@ document.addEventListener("DOMContentLoaded", function() {
                 list.appendChild(opt);
             }
         });
+        const outbox = document.createElement("div");
+        outbox.className = "outbox";
+        const text = document.createElement("p");
+        text.className = "plogout"
+        text.textContent = "logout"
         options.appendChild(list);
+        const logout = document.createElement("i");
+        logout.className= "fa-solid fa-power-off";
+        outbox.appendChild(logout);
+        outbox.appendChild(text);
+        options.appendChild(outbox);
         sideoptions.appendChild(options);
     }
+
+    const outbo = document.querySelector('.outbox');
+
+    outbo.addEventListener('click', () => {
+        sessionStorage.removeItem('ContentUser');
+        window.location.href = 'login.html';
+    });
+
+    const section = document.querySelector('section');
+    const menu = document.querySelector(".options");
+    const checker = document.getElementById("see");
+    const gohome = document.querySelector(".name");
+section.addEventListener("click", () => {
+    if (checker.checked) {
+        checker.checked = false;
+    }
+});
+
+  gohome.addEventListener('click', () => {
+    window.location.href = 'index.html';
+  });
 
     let availableKeywords = [
         {value:'dark white', url: "again.html"},
@@ -164,4 +226,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
         }
-});
+};
+
+document.addEventListener("DOMContentLoaded", initializeNavbar);

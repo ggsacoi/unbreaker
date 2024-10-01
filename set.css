@@ -1,0 +1,91 @@
+.login {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.nameB{
+    display: flex;
+    position: absolute;
+    top: 50px;
+}
+
+.boxdevices {
+    width: 2rem;
+    height: 2rem;
+    background-color: gray;
+    display: flex;
+    position: absolute;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    top: 10vh;
+
+}
+
+.connexion {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.logG {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    color: white;
+    background-color: rgb(0, 89, 255);
+}
+
+.fa-google {
+    font-size: 1rem;
+    margin-right: 7px;
+}
+
+.logM {
+    padding: 10px 50px 10px 50px;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    margin-bottom: 20px;
+}
+
+.connexion .logM a {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    font-size: large;
+}
+
+.decor {
+    top: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.item {
+    width: 49vw;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    border: solid 1px red;
+    flex-direction: column;
+    overflow: none;
+}
+.photo {
+    display: flex;
+    height: 48vw;
+    width: 50vw;
+    justify-content: center;
+    border-bottom: solid 0.5px red;
+    border-right: solid 0.5px red;
+    opacity: 0.5;
+}
