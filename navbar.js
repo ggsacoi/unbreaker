@@ -107,18 +107,10 @@ async function initializeNavbar() {
         list.className = "listoptions";
         const user = users.find(u => u.uid === currentUser?.uid);
         const lielement = [
-<<<<<<< HEAD
-            {name:user?.firstname, url:"Mervie.html"},
-            {name:'principal', url:"index.html"},
-            {name:'pour ecran', url:"catalogue.html"},
-            {name:'settings', url:"settings.html"},
-            {name:'contact', url:"#footer"},
-=======
             {name:'PRINCIPAL', url:"index.html"},
             {name:'DE SOLEIL', url:"catalogue.html"},
             {name:'CONTACT', url:"#footer"},
             {name:'SETTINGS', url:"settings.html"},
->>>>>>> 51828f2cea93dbd4c0aa9b539ed1cf1d04930b58
         ];
 
         lielement.forEach(({name, url}) => {
@@ -237,10 +229,6 @@ section.addEventListener("click", () => {
                 }
             }
         }
-<<<<<<< HEAD
-};
-
+    };
 document.addEventListener("DOMContentLoaded", initializeNavbar);
-=======
-});
->>>>>>> 51828f2cea93dbd4c0aa9b539ed1cf1d04930b58
+
