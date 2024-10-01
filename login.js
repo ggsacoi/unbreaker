@@ -1,17 +1,18 @@
 // Importer les fonctions nécessaires de Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 import { getDatabase } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
 // Configuration de Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyA43D6CPzdkzfvm-yNmLlTeafMKE_AUdgw",
-  authDomain: "x-pathway-421918.firebaseapp.com",
-  projectId: "x-pathway-421918",
-  storageBucket: "x-pathway-421918.appspot.com",
-  messagingSenderId: "16124353370",
-  appId: "1:16124353370:web:58ed21d55ee906f627f163",
-  measurementId: "G-2HLPMNV82B"
+  apiKey: "AIzaSyCdxlwg8vgSet4ZX7CD9xzc_gsPif5uJbY",
+  authDomain: "thebiggestone-6e5ef.firebaseapp.com",
+  projectId: "thebiggestone-6e5ef",
+  storageBucket: "thebiggestone-6e5ef.appspot.com",
+  messagingSenderId: "942794830712",
+  appId: "1:942794830712:web:14b37d79f27c63d543ce8d",
+  measurementId: "G-HB7VWE6XD9"
 };
 
 // Initialiser Firebase
@@ -20,17 +21,29 @@ const app = initializeApp(firebaseConfig);
 // Obtenir les instances des services
 const auth = getAuth(app);
 const database = getDatabase(app);
-
+const db = getFirestore(app);
+async function getUsersData() {
+const usersData = [];
+const docRef = collection(db,"Users");
+try {
+const docsSnap = await getDocs(docRef);
+docsSnap.forEach((doc) => {
+    const userData = doc.data();
+    usersData.push(userData);
+});
+} catch (error) {
+  console.error("Erreur lors de la récupération des utilisateurs:", error);
+}
+}
 // Écouter l'événement DOMContentLoaded pour s'assurer que le DOM est complètement chargé
 document.addEventListener('DOMContentLoaded', () => {
   // Obtenir le bouton d'envoi
   const sendButton = document.getElementById("envoi");
+  const email = document.getElementById("lemail").value;
 
   if (sendButton) {
     sendButton.addEventListener("click", async (e) => {
       e.preventDefault();
-      
-      // Obtenir les valeurs d'email et de mot de passe lors du clic sur le bouton
       const email = document.getElementById("lemail").value;
       const password = document.getElementById("lemotdepasse").value;
 
@@ -39,7 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         // Utilisateur connecté
         const user = userCredential.user;
-        alert(`Utilisateur connecté : ${user.email}`);
+        sessionStorage.setItem('ContentUser', JSON.stringify(user));
+        window.location.href = 'index.html';
         // Vous pouvez maintenant utiliser l'objet user pour d'autres opérations
       } catch (error) {
         const errorCode = error.code;
@@ -50,4 +64,19 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     console.error("Bouton d'envoi introuvable");
   }
+  const backtosignin = document.getElementById('creation');
+  backtosignin.addEventListener('click', () => {
+    window.location.href = 'signin.html';
+  });
+  const forgot = document.getElementById('oublie');
+  forgot.addEventListener('click', () => {
+      alert('entre ton email evant de changer ton mots de passe');
+  });
+
+    forgot.addEventListener('click', () => {
+      if(email) {
+      window.location.href = 'reset.html';
+                }
 });
+
+});   

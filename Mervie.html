@@ -4,18 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="Mervie.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section id="contact">
-            <p>email</p>
-            <input placeholder="email" id="lemail" type="email">
-            <p>mots de passe</p>
-            <input type="password" id="lemotdepasse" placeholder="password">
-            <button id="envoi" type="button" class="envoi">send</button>
-            <p class="redirection" id="oublie">mots de passe oublier</p>
-            <p class="redirection" id="creation">créer un compte</p>
+    <nav class="navbar" id="navbar">
+</nav>
+    <section class="contact">
+          <div class="form-container">
+            <h3 class="title">ACCOUNT</h3>
+            <div class="lezebla">
+                <input class="lesblaz" type="text" placeholder="name" id="name">
+                <input class="lesblaz" type="text" placeholder="lastname" id="lastname">
+            </div>
+        <p>email</p>
+        <input placeholder="email" id="lemail" type="email">
+        <p>nouveau email</p>
+        <input placeholder="email" id="newmail" type="email">
+        <p>numero</p>
+        <input placeholder="number" id="number" type="tel">
+        <p>nouveau numero</p>
+        <input placeholder="number" id="newnumber" type="tel">
+        <p>adresse</p>
+        <input placeholder="adresse" id="adresse" type="text">
+        <p>nouvelle adresse</p>
+        <input placeholder="adresse" id="newadresse" type="text">
+        <button id="envoi" type="button" href="#" class="sen-btn">send</button>
     </section>
       <footer id="footer">
         <div class="brands-item">
@@ -34,8 +48,9 @@
         <p class="cbien">contact us:merviendama@gmail.com</p>
         <p>phone: 0744569488</p>
     </footer>
+    <script src="remove.js"></script>
       <script src="https://kit.fontawesome.com/d28f9485ed.js" crossorigin="anonymous"></script>
-      <script src="https://smtpjs.com/v3/smtp.js"></script>
-      <script src="login.js" type="module"></script>
+      <script src="Mervie.js" type="module"></script>
+      <script src="navbar.js" type="module"></script>
 </body>
 </html>

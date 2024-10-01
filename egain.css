@@ -173,19 +173,145 @@ button {
     margin-bottom: 50px;
     border-radius: 50px;
     height: 50px;
-    width: 70vw;
+    width: 250px;
     background-color: rgb(241, 36, 36);
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid 2px black;
+    border: solid 1px black;
 }
 
-#container .tg {
+.container .tg {
     padding: none;
    color: white;
 }
 
 .yaplus {
    color: red; 
+}
+
+@media (min-width: 951px) {
+    body {
+        background-color: black;
+    }
+    .suns {
+        position: relative;
+        width: 100vw;
+        height: min-content;
+        display: flex;
+        justify-content: center;
+        height: auto;
+        background-color: white;
+    }
+    .boxofglass {
+        position: relative;
+        width: 40vw;
+        height: min-content;
+        display: flex;
+        align-items: center;
+        background-color: black;
+        flex-direction: column;
+    }
+    .boxofglass h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+    }
+    .photos {
+        display: flex;
+        max-width: 40vw;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        overflow: hidden;
+        scroll-behavior: smooth;
+        border: solid 1px red;
+        background-color: black;
+    }
+
+    .ones {
+        display: flex;
+        width: 40vw;
+        position: relative;
+        left: 40vw;
+    }
+    .thows {
+        display: flex;
+        width: 40vw;
+        position: relative;
+        left: 40vw;
+    }
+    .threes {
+        display: flex;
+        width: 40vw;
+        position: relative;
+        left: 40vw;
+    }
+    h2 {
+        margin-bottom: 0;
+        color: white;
+    }
+    .boxdirect {
+        position: absolute;
+        width: 4vw;
+        height: 4vw;
+        background-color: gray;
+        display: flex;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        margin: 0 1vw 0 1vw;
+        z-index: 1;
+    }
+
+    #A {
+        right: 30vw;
+        opacity: 0.7;
+    }
+    
+    #B {
+        left: 34vw;
+        opacity: 0.7;
+    }
+
+    #A .fa-solid {
+        font-size: 2vw;
+    }
+
+    #B .fa-solid {
+        font-size: 2vw;
+    }
+    #container {
+        margin-bottom: 50px;
+        border-radius: 2.5vh;
+        height: 4vh;
+        width: 9vw;
+        background-color: rgb(241, 36, 36);
+        align-items: center;
+        border: solid 2px black;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nom {
+        font-size: 3rem;
+        color: white;
+    }
+    .description {
+        font-size: 2.5rem;
+        color: white;
+    }
+    .prix {
+        margin-top: 40px;
+        font-size: 3rem;
+        color: white;
+    }
+
+    #container .tg {
+        padding: none;
+        margin: none;
+       color: white;
+       font-size: 1vw;
+    }
 }

@@ -140,6 +140,10 @@ async function initializeNavbar() {
         outbox.appendChild(text);
         options.appendChild(outbox);
         sideoptions.appendChild(options);
+
+        if(!currentUser) {
+            outbox.style.display = 'none';
+          }
     }
 
     const outbo = document.querySelector('.outbox');

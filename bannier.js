@@ -1,6 +1,7 @@
 addEventListener('DOMContentLoaded', () => {
     const bannier = document.querySelector(".hautdelapage");
-    const mesure = window.innerWidth;
+    const img = document.querySelector('.ons');
+    const mesure = img.width;
 
         setInterval(() =>{
             if (bannier.scrollLeft + mesure >= bannier.scrollWidth) {

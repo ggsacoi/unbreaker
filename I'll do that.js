@@ -2,10 +2,10 @@ addEventListener('DOMContentLoaded', () => {
     const buttonleft = document.getElementById("A");
     const buttonright = document.getElementById("B");
     const slider = document.querySelector(".photos");
-    const google = document.getElementById("container");
-    const scrollAmount = window.innerWidth;
+    const img = document.querySelector('.ones');
+    const scrollAmount = img.width;
     let currentTranslateX = 0;
-
+    
     buttonright.addEventListener("click", ()=> {
         if (slider) { 
             slider.scrollLeft += scrollAmount;
@@ -17,8 +17,4 @@ addEventListener('DOMContentLoaded', () => {
             slider.scrollLeft -= scrollAmount;
         }
     });
-
-//     google.addEventListener("click", () => {
-//         window.open("c'estbien.html", "_top");
-//       });
 });
