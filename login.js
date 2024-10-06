@@ -1,6 +1,6 @@
 // Importer les fonctions nécessaires de Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 import { getDatabase } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
 
@@ -69,14 +69,15 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = 'signin.html';
   });
   const forgot = document.getElementById('oublie');
-  forgot.addEventListener('click', () => {
-      alert('entre ton email evant de changer ton mots de passe');
+  forgot.addEventListener('click', function(event){
+    event.preventDefault()
+    const email = document.getElementById("lemail").value;
+    if(!email) {
+      alert('entre ton email');
+    }
+    sendPasswordResetEmail(auth, email)
+    .then(() => {
+      alert('message envoyer dans ton boite mail');
+    })
   });
-
-    forgot.addEventListener('click', () => {
-      if(email) {
-      window.location.href = 'reset.html';
-                }
-});
-
 });   

@@ -26,8 +26,10 @@ async function getUsers() {
     return usersData;
 }
 
+const currentUser = JSON.parse(sessionStorage.getItem('ContentUser'));
+
 async function updateUser(uid, updatedData) {
-    // FIX: Use `doc()` to target the specific document by uid
+    // Use `doc()` to target the specific document by uid
     const userDocRef = doc(db, "Users", uid);
     await updateDoc(userDocRef, updatedData);
     console.log("User data updated successfully");
@@ -35,8 +37,6 @@ async function updateUser(uid, updatedData) {
 
 async function changedata() {
     const users = await getUsers();
-    const currentUser = JSON.parse(sessionStorage.getItem('ContentUser'));
-
     const user = users.find(user => user.uid === currentUser?.uid);
 
     if (user) {

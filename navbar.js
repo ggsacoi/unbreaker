@@ -107,6 +107,7 @@ async function initializeNavbar() {
         list.className = "listoptions";
         const user = users.find(u => u.uid === currentUser?.uid);
         const lielement = [
+            {name:user?.firstname, url:"Mervie.html"},
             {name:'PRINCIPAL', url:"index.html"},
             {name:'DE SOLEIL', url:"catalogue.html"},
             {name:'CONTACT', url:"#footer"},
