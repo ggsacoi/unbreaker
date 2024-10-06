@@ -147,11 +147,13 @@ async function initializeNavbar() {
           }
     }
     const optionleaver = document.querySelectorAll('li');
+    if(currentUser) {
     optionleaver.forEach((option) => {
         if (option.textContent.trim() === 'COMPTE') {
             option.style.display = 'none';
         }
     });
+    }
    
     const outbo = document.querySelector('.outbox');
 
