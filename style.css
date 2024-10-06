@@ -244,6 +244,7 @@
         width: 100vw;
         justify-content: center;
     }
+
     .hautdelapage {
     position: relative;
     min-width: 100vw;
@@ -736,7 +737,7 @@
     .banprem {
         display: flex;
         position: relative;
-        width: min-content;
+        width: 100vw;
         background-color: black;
         }
   
