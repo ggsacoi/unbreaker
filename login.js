@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'index.html';
         // Vous pouvez maintenant utiliser l'objet user pour d'autres opérations
       } catch (error) {
+        alert('mots de passe incorrect');
         const errorCode = error.code;
         const errorMessage = error.message;
         console.error(`Erreur (${errorCode}): ${errorMessage}`);

@@ -108,6 +108,7 @@ async function initializeNavbar() {
         const user = users.find(u => u.uid === currentUser?.uid);
         const lielement = [
             {name:user?.firstname, url:"Mervie.html"},
+            {name:'COMPTE', url:"set.html"},
             {name:'PRINCIPAL', url:"index.html"},
             {name:'DE SOLEIL', url:"catalogue.html"},
             {name:'CONTACT', url:"#footer"},
@@ -145,7 +146,13 @@ async function initializeNavbar() {
             outbox.style.display = 'none';
           }
     }
-
+    const optionleaver = document.querySelectorAll('li');
+    optionleaver.forEach((option) => {
+        if (option.textContent.trim() === 'COMPTE') {
+            option.style.display = 'none';
+        }
+    });
+   
     const outbo = document.querySelector('.outbox');
 
     outbo.addEventListener('click', () => {
