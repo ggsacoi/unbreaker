@@ -52,7 +52,7 @@ submit.addEventListener('click', async (e) => {
         uid: user.uid
       })
       .then(() => {
-        alert("bienvenue" + name);
+        alert("bienvenue  " + name);
         window.location.href = 'login.html';
       })
       .catch((error) => {
