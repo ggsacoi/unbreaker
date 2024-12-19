@@ -203,7 +203,7 @@ section.addEventListener("click", () => {
         if(input.length > 0){
             result = availableKeywords.filter((item)=>{
                return item.value.toLowerCase().includes(input.toLowerCase());
-            });
+            }).slice(0, 12);
             console.log(result);
         }
         display(result);
