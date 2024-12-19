@@ -227,7 +227,7 @@ button {
         overflow: hidden;
         scroll-behavior: smooth;
         border: solid 1px red;
-        background-color: black;
+        background-color: white;
     }
 
     .ones {
