@@ -177,7 +177,7 @@ section.addEventListener("click", () => {
   });
 
     let availableKeywords = [
-        {value:'dark white', url: "again.html"},
+        {value:'dolce & gabbana', url: "again.html"},
         {value:'sky begin night', url:"again2.html"},
         {value:'uptown bleumarine', url:"again3.html"},
        {value:'uptown nature', url:"again4.html"},
