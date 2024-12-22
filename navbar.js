@@ -188,11 +188,12 @@ section.addEventListener("click", () => {
        {value:'Balenciaga silver', url:"again9.html"},
        {value:'medusa biggie noir', url:"again10.html"},
        {value:'louis vuitton Acetate 1.1 Millionaires blanc', url:"again11.html"},
-       {value:'dolce & gabbana', url: "again12.html"},
+       {value:'gaming esp white', url: "again12.html"},
        {value:'call of duty MW', url:"again13.html"},
        {value:'rainbow six siege', url:"again14.html"},
        {value:'starkIndustries', url:"again15.html"},
        {value:'gaming esp orange', url:"again16.html"},
+       {value:'dolce & gabbana', url:"again17.html"},
     ];
 
     const resultBox = document.querySelector('.things');

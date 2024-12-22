@@ -109,8 +109,8 @@
         { element: document.getElementById('produit14'), url: "again14.html" },
         { element: document.getElementById('produit15'), url: "again15.html" },
         { element: document.getElementById('produit16'), url: "again16.html" },
+        { element: document.getElementById('produit17'), url: "again17.html" },
     ];
-
     baelokonioso.forEach(({ element, url }) => {
         if (element) {
             element.addEventListener('click', () => {
