@@ -177,7 +177,7 @@ section.addEventListener("click", () => {
   });
 
     let availableKeywords = [
-        {value:'dolce & gabbana', url: "again.html"},
+        {value:'dark white', url: "again.html"},
         {value:'sky begin night', url:"again2.html"},
         {value:'uptown bleumarine', url:"again3.html"},
        {value:'uptown nature', url:"again4.html"},
@@ -187,8 +187,8 @@ section.addEventListener("click", () => {
        {value:'silver armor', url:"again8.html"},
        {value:'Balenciaga silver', url:"again9.html"},
        {value:'medusa biggie noir', url:"again10.html"},
-       {value:'league of legends', url:"again11.html"},
-       {value:'gaming esp white', url:"again12.html"},
+       {value:'louis vuitton Acetate 1.1 Millionaires blanc', url:"again11.html"},
+       {value:'dolce & gabbana', url: "again12.html"},
        {value:'call of duty MW', url:"again13.html"},
        {value:'rainbow six siege', url:"again14.html"},
        {value:'starkIndustries', url:"again15.html"},
