@@ -110,6 +110,7 @@
         { element: document.getElementById('produit15'), url: "again15.html" },
         { element: document.getElementById('produit16'), url: "again16.html" },
         { element: document.getElementById('produit17'), url: "again17.html" },
+        { element: document.getElementById('produit18'), url: "again18.html" },
     ];
     baelokonioso.forEach(({ element, url }) => {
         if (element) {
