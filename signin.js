@@ -20,11 +20,10 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const dataBase = getDatabase(app);
 const db = getFirestore(app);
-
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -58,7 +57,7 @@ submit.addEventListener('click', async (e) => {
       })
       .catch((error) => {
         console.error("Error adding document: ", error);
-        alert('erreur dans la création de compte veuillez réessayer ');
+        alert('Error creating user. Please try again.');
       });
     })
     .catch((error) => {
@@ -67,7 +66,7 @@ submit.addEventListener('click', async (e) => {
       alert(errorMessage);
     });
 } else {
-  alert('Veuillez remplir tous les champs et vous assurer que les mots de passe correspondent');
+  alert('Please fill in all fields and ensure passwords match.');
 }
 });
 const backtosignin = document.getElementById('connection');
