@@ -58,7 +58,7 @@ submit.addEventListener('click', async (e) => {
       })
       .catch((error) => {
         console.error("Error adding document: ", error);
-        alert('Error creating user. Please try again.');
+        alert('erreur dans la création de compte veuillez réessayer ');
       });
     })
     .catch((error) => {
@@ -67,7 +67,7 @@ submit.addEventListener('click', async (e) => {
       alert(errorMessage);
     });
 } else {
-  alert('Please fill in all fields and ensure passwords match.');
+  alert('Veuillez remplir tous les champs et vous assurer que les mots de passe correspondent');
 }
 });
 const backtosignin = document.getElementById('connection');
