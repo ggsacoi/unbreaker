@@ -20,10 +20,11 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
+const auth = getAuth(app);
 const dataBase = getDatabase(app);
-const auth = getAuth();
 const db = getFirestore(app);
+
 
 
 document.addEventListener('DOMContentLoaded', () => {

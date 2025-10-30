@@ -112,7 +112,7 @@ async function initializeNavbar() {
             {name:'PRINCIPAL', url:"index.html"},
             {name:'DE SOLEIL', url:"catalogue.html"},
             {name:'CONTACT', url:"#footer"},
-            {name:'SETTINGS', url:"settings.html"},
+            {name:'SETTINGS', url:"Mervie.html"},
         ];
 
         lielement.forEach(({name, url}) => {

@@ -8,10 +8,10 @@
     flex-direction: column;
     z-index: 2;
     top: 70px;
-    background-size: 10rem;
+    background-size: 66vw;
+    background-repeat: no-repeat;
     background-position: center;
-    background-repeat: repeat;
-    background-image: url(T-VOTR04_L.jpg);
+    background-image: url("0VE4361 GB1-87.jpg");
 }
 
 .nameB{

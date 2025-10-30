@@ -15,18 +15,19 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+const currentUser = JSON.parse(sessionStorage.getItem('ContentUser'));
+
 async function getUsers() {
     const usersData = [];
-    const docRef = collection(db, "Users");
+    // Utilise la bonne collection : 'Users' ou 'people' selon ton besoin
+    const docRef = collection(db, "Users"); // Remplace par "people" si besoin
     const docsSnap = await getDocs(docRef);
     docsSnap.forEach((doc) => {
         const userData = doc.data();
-        usersData.push(userData);
+        usersData.push(userData); // Ajoute l'id du document et fusionne les propriétés
     });
     return usersData;
 }
-
-const currentUser = JSON.parse(sessionStorage.getItem('ContentUser'));
 
 async function updateUser(uid, updatedData) {
     // Use `doc()` to target the specific document by uid
@@ -62,24 +63,46 @@ async function changedata() {
         const adresse = document.getElementById('adresse');
         adresse.value = user.adresse;
         adresse.readOnly = true;
-
-        // Update on button click
-        const submit = document.getElementById('envoi');
-        submit.addEventListener("click", async () => {
-            const newemail = document.getElementById('newmail').value;
-            const newnumber = document.getElementById('newnumber').value;
-            const newadresse = document.getElementById('newadresse').value;
-
-            const updatedData = {
-                adresse: newadresse,
-                email: newemail,
-                number: newnumber
-            };
-
-            await updateUser(user.uid, updatedData); // Call the update function
-            alert('Le changement a été fait');
-        });
+    } else {
+        console.warn('Aucun utilisateur trouvé pour ce currentUser.uid:', currentUser?.uid);
     }
 }
+
+const newmail = document.getElementById('newmail');
+const newnumber = document.getElementById('newnumber');
+const newadress = document.getElementById('newadresse');
+
+const submit = document.getElementById('envoi');
+
+submit.addEventListener("click", async () => {
+    try {
+        const peopleRef = collection(db, "Users");
+        const peopleSnap = await getDocs(peopleRef);
+        let foundUser = null;
+        peopleSnap.forEach((docu) => {
+            const person = docu.data();
+            if (person.uid === currentUser?.uid) {
+                foundUser = { id: docu.id, ...person };
+            }
+        });
+        if (foundUser) {
+            let updatedFields = {};
+            if (newmail.value) updatedFields.email = newmail.value;
+            if (newnumber.value) updatedFields.number = newnumber.value;
+            if (newadress.value) updatedFields.adresse = newadress.value;
+            if (Object.keys(updatedFields).length > 0) {
+                await updateDoc(doc(db, "Users", foundUser.id), updatedFields);
+                alert("Champs mis à jour pour : " + foundUser.uid);
+            } else {
+                alert("Aucune nouvelle valeur renseignée, rien n'a été modifié.");
+            }
+        } else {
+            alert("Aucun utilisateur trouvé dans 'Users' avec cet uid.");
+        }
+    } catch (error) {
+        alert('Erreur lors de la mise à jour : ' + error.message);
+        console.error(error);
+    }
+});
 
 document.addEventListener("DOMContentLoaded", changedata);

@@ -5,16 +5,16 @@ body {
     #contact {
     padding: 10rem 2rem;
     min-height: 75vh;
-    background-size: 10rem;
+    background-size: 100vw;
     background-position: center;
-    background-repeat: repeat;
     display: flex;
     justify-content: center;
     color: black;
     z-index: 1;
-    background-image: url(T-VOTR04_L.jpg);
+    background-image: url(hawkers-one-raw-polarized-air-sky-HONR21TLTP-l.jpg);
     flex-direction: column;
     align-items: center;
+
 }
 
 .recadrage {
@@ -106,5 +106,5 @@ body {
  #footer {
     top: 0;
     min-height: 25vh;
-    height: min-content:
+    height: min-content;
  }
