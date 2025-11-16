@@ -133,7 +133,7 @@ async function initializeNavbar() {
         outbox.className = "outbox";
         const text = document.createElement("p");
         text.className = "plogout"
-        text.textContent = "DECONNEXION"
+        text.textContent = "déconnexion";
         options.appendChild(list);
         const logout = document.createElement("i");
         logout.className= "fa-solid fa-power-off";
