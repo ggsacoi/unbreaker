@@ -69,7 +69,7 @@ submit.addEventListener('click', async (e) => {
   alert('Please fill in all fields and ensure passwords match.');
 }
 });
-const backtosignin = document.getElementById('connection');
+const backtosignin = document.getElementById('connexion');
   backtosignin.addEventListener('click', () => {
     window.location.href = 'login.html';
   });
