@@ -71,14 +71,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   const forgot = document.getElementById('oublie');
   forgot.addEventListener('click', function(event){
-    event.preventDefault()
+    event.preventDefault();
     const email = document.getElementById("lemail").value;
     if(!email) {
-      alert('entre ton email');
+      alert('entre seulement ton email');
+      return;
     }
     sendPasswordResetEmail(auth, email)
     .then(() => {
-      alert('message envoyer dans ton boite mail');
+      alert('vas dans les spam Message envoyé dans ta boite mail');
     })
+    .catch((error) => {
+      alert('Erreur lors de l’envoi du mail : ' + error.message);
+      console.error(error);
+    });
   });
-});   
+});
