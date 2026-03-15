@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     sendPasswordResetEmail(auth, email)
     .then(() => {
-      alert('vas dans les spam Message envoyé dans ta boite mail');
+      alert('Message envoyé dans ta boite mail');
     })
     .catch((error) => {
       alert('Erreur lors de l’envoi du mail : ' + error.message);
