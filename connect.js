@@ -40,7 +40,6 @@ button.addEventListener('click', function () {
                 email: user.email,
                 firstName: firstName,
                 lastName: lastName,
-                displayName: user.displayName,
                 photoURL: user.photoURL,
                 createdAt: new Date(),
             });
