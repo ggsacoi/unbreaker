@@ -44,7 +44,7 @@ button.addEventListener('click', function () {
                 photoURL: user.photoURL,
                 createdAt: new Date(),
             });
-            sessionStorage.setItem('ContentUser',uid);
+            sessionStorage.setItem('ContentUser', JSON.stringify(user.uid));
         }
         
         window.location.href = 'index.html';
