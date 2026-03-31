@@ -44,9 +44,9 @@ submit.addEventListener('click', async (e) => {
   .then((userCrendential) => {
       const user = userCrendential.user;
       addDoc(collection(db, "Users"), {
-        firstname: name,
+        firstName: name,
         adresse: adresse,
-        lastname: lastname,
+        lastName: lastname,
         number: number,
         email: email,
         uid: user.uid
