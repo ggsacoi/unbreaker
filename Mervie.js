@@ -45,11 +45,11 @@ async function changedata() {
 
         // Populate fields with current user data
         const name = document.getElementById('name');
-        name.value = user.firstname;
+        name.value = user.firstName;
         name.readOnly = true;
 
         const lastname = document.getElementById('lastname');
-        lastname.value = user.lastname;
+        lastname.value = user.lastName;
         lastname.readOnly = true;
 
         const email = document.getElementById('lemail');
