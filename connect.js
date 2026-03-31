@@ -25,6 +25,12 @@ button.addEventListener('click', function () {
         const token = credential.accessToken;
         const user = result.user;
         
+        // Extraire le prénom et le nom du displayName
+        const fullName = user.displayName || "";
+        const nameParts = fullName.split(" ");
+        const firstName = nameParts[0] || "";
+        const lastName = nameParts.slice(1).join(" ") || "";
+        
         // Sauvegarder l'utilisateur dans Firestore
         const userRef = doc(db, "Users", user.uid);
         const userDoc = await getDoc(userRef);
@@ -32,6 +38,9 @@ button.addEventListener('click', function () {
             await setDoc(userRef, {
                 userId: user.uid,
                 email: user.email,
+                firstName: firstName,
+                lastName: lastName,
+                displayName: user.displayName,
             });
         }
         
