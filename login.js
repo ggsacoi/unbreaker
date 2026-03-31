@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         // Utilisateur connecté
         const user = userCredential.user;
-        sessionStorage.setItem('ContentUser', JSON.stringify(user.uid));
+        localStorage.setItem('ContentUser', JSON.stringify(user.uid));
         window.location.href = 'index.html';
         // Vous pouvez maintenant utiliser l'objet user pour d'autres opérations
       } catch (error) {
