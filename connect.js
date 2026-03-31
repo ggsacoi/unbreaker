@@ -27,9 +27,9 @@ button.addEventListener('click', function () {
         
         // Extraire le prénom et le nom du displayName
         const fullName = user.displayName || "";
-        const nameParts = fullName.split(" ");
-        const firstName = nameParts[0] || "";
-        const lastName = nameParts.slice(1).join(" ") || "";
+        const nameParts = fullName.trim().split(/\s+/);
+        const firstName = nameParts[0] || "User";
+        const lastName = nameParts.length > 1 ? nameParts.slice(1).join(" ") : "";
         
         // Sauvegarder l'utilisateur dans Firestore
         const userRef = doc(db, "Users", user.uid);
@@ -41,6 +41,8 @@ button.addEventListener('click', function () {
                 firstName: firstName,
                 lastName: lastName,
                 displayName: user.displayName,
+                photoURL: user.photoURL,
+                createdAt: new Date(),
             });
         }
         
