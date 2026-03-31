@@ -26,12 +26,18 @@ docsSnap.forEach((doc) => {
 return usersData;
 }
 getUsers();
+const currentUser = JSON.parse(sessionStorage.getItem('ContentUser'));
+
+async function updateUser(uid, updatedData) {
+    // Use `doc()` to target the specific document by uid
+    const userDocRef = doc(db, "Users", uid);
+    await updateDoc(userDocRef, updatedData);
+    console.log("User data updated successfully");
+}
+
 async function initializeNavbar() {
     const users = await getUsers();
-    const currentUser = JSON.parse(sessionStorage.getItem('ContentUser'));
-
-    // let nayebité = localStorage.getItem('text');
-    // nasilisi.textContent = nayebité;
+    const user = users.find(user => user.uid === currentUser?.uid);
 
     const navbar = document.getElementById('navbar');
 
@@ -107,7 +113,7 @@ async function initializeNavbar() {
         list.className = "listoptions";
         const user = users.find(u => u.uid === currentUser?.uid);
         const lielement = [
-            {name:user?.firstname, url:"Mervie.html"},
+            {name:user?.firstName, url:"Mervie.html"},
             {name:'COMPTE', url:"set.html"},
             {name:'PRINCIPAL', url:"index.html"},
             {name:'DE SOLEIL', url:"catalogue.html"},

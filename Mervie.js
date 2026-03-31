@@ -29,13 +29,6 @@ async function getUsers() {
     return usersData;
 }
 
-async function updateUser(uid, updatedData) {
-    // Use `doc()` to target the specific document by uid
-    const userDocRef = doc(db, "Users", uid);
-    await updateDoc(userDocRef, updatedData);
-    console.log("User data updated successfully");
-}
-
 async function changedata() {
     const users = await getUsers();
     const user = users.find(user => user.uid === currentUser?.uid);
