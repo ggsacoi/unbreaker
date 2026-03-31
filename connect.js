@@ -26,7 +26,7 @@ button.addEventListener('click', function () {
         const user = result.user;
         
         // Sauvegarder l'utilisateur dans Firestore
-        const userRef = doc(db, "users", user.uid);
+        const userRef = doc(db, "Users", user.uid);
         const userDoc = await getDoc(userRef);
         if (!userDoc.exists()) {
             await setDoc(userRef, {
