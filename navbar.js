@@ -26,7 +26,7 @@ docsSnap.forEach((doc) => {
 return usersData;
 }
 getUsers();
-const currentUser = JSON.parse(sessionStorage.getItem('ContentUser'));
+const currentUser = JSON.parse(localStorage.getItem('ContentUser'));
 
 async function updateUser(uid, updatedData) {
     // Use `doc()` to target the specific document by uid
