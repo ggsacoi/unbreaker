@@ -43,7 +43,7 @@ button.addEventListener('click', function () {
                 photoURL: user.photoURL,
                 createdAt: new Date(),
             });
-            loStorage.setItem('ContentUser', JSON.stringify(user.uid));
+            localStorage.setItem('ContentUser', JSON.stringify(user.uid));
         }
         
         window.location.href = 'index.html';
