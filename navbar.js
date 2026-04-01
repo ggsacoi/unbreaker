@@ -30,7 +30,6 @@ const currentUser = JSON.parse(localStorage.getItem('ContentUser'));
 
 async function initializeNavbar() {
     const users = await getUsers();
-    const user = users.find(user => user.uid === currentUser?.uid);
 
     const navbar = document.getElementById('navbar');
 
