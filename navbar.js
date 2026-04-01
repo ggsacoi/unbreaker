@@ -104,6 +104,9 @@ async function initializeNavbar() {
         const list = document.createElement("ul");
         list.className = "listoptions";
         const user = currentUser?.uid ? users.find(u => u.uid === currentUser.uid) : undefined;
+        console.log('currentUser:', currentUser);
+        console.log('user:', user);
+        console.log('user?.firstName:', user?.firstName);
         const lielement = [
             {name:user?.firstName, url:"Mervie.html"},
             {name:'COMPTE', url:"set.html"},
