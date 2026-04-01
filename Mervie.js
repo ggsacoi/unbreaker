@@ -61,7 +61,6 @@ async function changedata() {
     }
 }
 
-const newmail = document.getElementById('newmail');
 const newnumber = document.getElementById('newnumber');
 const newadress = document.getElementById('newadresse');
 
@@ -80,7 +79,6 @@ submit.addEventListener("click", async () => {
         });
         if (foundUser) {
             let updatedFields = {};
-            if (newmail.value) updatedFields.email = newmail.value;
             if (newnumber.value) updatedFields.number = newnumber.value;
             if (newadress.value) updatedFields.adresse = newadress.value;
             if (Object.keys(updatedFields).length > 0) {

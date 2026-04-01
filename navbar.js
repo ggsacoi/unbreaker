@@ -157,7 +157,7 @@ async function initializeNavbar() {
 
     outbo.addEventListener('click', () => {
         sessionStorage.removeItem('ContentUser');
-        window.location.href = 'login.html';
+        window.location.href = 'set.html';
     });
 
     const section = document.querySelector('section');
