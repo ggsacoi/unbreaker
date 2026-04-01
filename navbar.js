@@ -26,7 +26,7 @@ docsSnap.forEach((doc) => {
 return usersData;
 }
 getUsers();
-const currentUser = JSON.parse(localStorage.getItem('ContentUser'));
+const currentUser = JSON.parse(sessionStorage.getItem('ContentUser'));
 
 async function initializeNavbar() {
     const users = await getUsers();
