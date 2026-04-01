@@ -156,7 +156,7 @@ async function initializeNavbar() {
     const outbo = document.querySelector('.outbox');
 
     outbo.addEventListener('click', () => {
-        localStorage.removeItem('ContentUser');
+        sessionStorage.removeItem('ContentUser');
         window.location.href = 'login.html';
     });
 
