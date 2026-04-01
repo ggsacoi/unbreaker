@@ -105,6 +105,8 @@ async function initializeNavbar() {
         list.className = "listoptions";
         const user = currentUser?.uid ? users.find(u => u.uid === currentUser.uid) : undefined;
         console.log('currentUser:', currentUser);
+        console.log('users:', users);
+        console.log('users[0]:', users[0]);
         console.log('user:', user);
         console.log('user?.firstName:', user?.firstName);
         const lielement = [
