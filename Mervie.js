@@ -15,7 +15,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const currentUser = JSON.parse(sessionStorage.getItem('ContentUser'));
+const currentUser = JSON.parse(localStorage.getItem('ContentUser'));
 
 async function getUsers() {
     const usersData = [];

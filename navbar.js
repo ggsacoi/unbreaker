@@ -26,7 +26,7 @@ docsSnap.forEach((doc) => {
 return usersData;
 }
 getUsers();
-const currentUser = JSON.parse(sessionStorage.getItem('ContentUser'));
+const currentUser = JSON.parse(localStorage.getItem('ContentUser'));
 
 async function initializeNavbar() {
     const users = await getUsers();
@@ -156,7 +156,7 @@ async function initializeNavbar() {
     const outbo = document.querySelector('.outbox');
 
     outbo.addEventListener('click', () => {
-        sessionStorage.removeItem('ContentUser');
+        localStorage.removeItem('ContentUser');
         window.location.href = 'set.html';
     });
 
