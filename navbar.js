@@ -107,7 +107,7 @@ async function initializeNavbar() {
         options.className = "options";
         const list = document.createElement("ul");
         list.className = "listoptions";
-        const user = currentUser ? users.find(u => u.uid === currentUser || u.uid === currentUser2 || u.id === currentUser) : undefined;
+        const user = currentUser ? users.find(u => u.uid === currentUser || u.uid === currentUser2 || u.id === currentUser) : currentUser2 ? users.find(u => u.uid === currentUser || u.uid === currentUser2 || u.id === currentUser) : undefined;
         const lielement = [
             {name:user?.firstName || user?.name, url:"Mervie.html"},
             {name:'COMPTE', url:"set.html"},
