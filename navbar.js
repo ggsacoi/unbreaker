@@ -110,7 +110,7 @@ async function initializeNavbar() {
         const user = currentUser ? users.find(u => u.uid === currentUser || u.userId === currentUser || u.id === currentUser) : undefined;
         console.log('currentUser:', currentUser, 'users:', users, 'user found:', user);
         const lielement = [
-            {name:user?.firstName || user?.name || user?.prenom || 'MON COMPTE', url:"Mervie.html"},
+            {name:user?.firstName, url:"Mervie.html"},
             {name:'COMPTE', url:"set.html"},
             {name:'PRINCIPAL', url:"index.html"},
             {name:'DE SOLEIL', url:"catalogue.html"},
