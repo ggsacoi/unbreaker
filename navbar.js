@@ -29,7 +29,8 @@ let users = [];
 getUsers().then(data => {
   users = data;
 });
-const currentUser = localStorage.getItem('ContentUser');
+const currentUser = JSON.parse(localStorage.getItem('ContentUser'));
+const currentUser2 = localStorage.getItem('ContentUser');
 
 async function initializeNavbar() {
     const users = await getUsers();
@@ -106,7 +107,7 @@ async function initializeNavbar() {
         options.className = "options";
         const list = document.createElement("ul");
         list.className = "listoptions";
-        const user = currentUser ? users.find(u => u.uid === currentUser || u.id === currentUser) : undefined;
+        const user = currentUser ? users.find(u => u.uid === currentUser || u.uid === currentUser2 || u.id === currentUser) : undefined;
         const lielement = [
             {name:user?.firstName || user?.name, url:"Mervie.html"},
             {name:'COMPTE', url:"set.html"},
