@@ -25,8 +25,11 @@ docsSnap.forEach((doc) => {
 });
 return usersData;
 }
-getUsers();
-const currentUser = JSON.parse(localStorage.getItem('ContentUser'));
+let users = [];
+getUsers().then(data => {
+  users = data;
+});
+const currentUser = localStorage.getItem('ContentUser');
 
 async function initializeNavbar() {
     const users = await getUsers();
@@ -103,9 +106,9 @@ async function initializeNavbar() {
         options.className = "options";
         const list = document.createElement("ul");
         list.className = "listoptions";
-        const user = currentUser ? users.find(u => u.userId === currentUser) : undefined;
+        const user = currentUser ? users.find(u => u.uid === currentUser || u.id === currentUser) : undefined;
         const lielement = [
-            {name:user?.firstName, url:"Mervie.html"},
+            {name:user?.firstName || user?.name, url:"Mervie.html"},
             {name:'COMPTE', url:"set.html"},
             {name:'PRINCIPAL', url:"index.html"},
             {name:'DE SOLEIL', url:"catalogue.html"},

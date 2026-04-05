@@ -15,7 +15,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const currentUser = JSON.parse(localStorage.getItem('ContentUser'));
+const currentUser = localStorage.getItem('ContentUser');
+const currentUser2 = localStorage.getItem('ContentUser');
+
 
 async function getUsers() {
     const usersData = [];
@@ -31,10 +33,9 @@ async function getUsers() {
 
 async function changedata() {
     const users = await getUsers();
-    const user = currentUser ? users.find(u => u.userId === currentUser) : undefined;
+    const user = currentUser ? users.find(u => u.uid === currentUser2 || u.userId === currentUser) : undefined;
 
     if (user) {
-        console.log(user);
 
         // Populate fields with current user data
         const name = document.getElementById('name');
@@ -66,14 +67,15 @@ const newadress = document.getElementById('newadresse');
 
 const submit = document.getElementById('envoi');
 
-submit.addEventListener("click", async () => {
+if (submit) {
+    submit.addEventListener("click", async () => {
     try {
         const peopleRef = collection(db, "Users");
         const peopleSnap = await getDocs(peopleRef);
         let foundUser = null;
         peopleSnap.forEach((docu) => {
             const person = docu.data();
-            if (person.uid === currentUser?.uid) {
+            if (person.uid === currentUser) {
                 foundUser = { id: docu.id, ...person };
             }
         });
@@ -94,6 +96,7 @@ submit.addEventListener("click", async () => {
         alert('Erreur lors de la mise à jour : ' + error.message);
         console.error(error);
     }
-});
+    });
+}
 
 document.addEventListener("DOMContentLoaded", changedata);

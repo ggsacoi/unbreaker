@@ -39,7 +39,6 @@ docsSnap.forEach((doc) => {
 document.addEventListener('DOMContentLoaded', () => {
   // Obtenir le bouton d'envoi
   const sendButton = document.getElementById("envoi");
-  const email = document.getElementById("lemail").value;
 
   if (sendButton) {
     sendButton.addEventListener("click", async (e) => {
@@ -52,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         // Utilisateur connecté
         const user = userCredential.user;
-        localStorage.setItem('ContentUser', JSON.stringify(user.uid));
+        localStorage.setItem('ContentUser', user.uid);
         window.location.href = 'index.html';
         // Vous pouvez maintenant utiliser l'objet user pour d'autres opérations
       } catch (error) {
