@@ -74,12 +74,12 @@ async function initializeNavbar() {
         const truc = document.createElement("div");
         truc.className = "things";
         search.appendChild(truc);
-        const name = document.createElement("div");
-        name.className = "name";
+        const nom = document.createElement("div");
+        nom.className = "name";
         const logo = document.createElement("h1");
         logo.textContent = "BREAKTHEGLASS";
-        name.appendChild(logo);
-        navbar.appendChild(name);
+        nom.appendChild(logo);
+        navbar.appendChild(nom);
         const sideoptions = document.createElement("div");
         sideoptions.className = "rightside";
         navbar.appendChild(sideoptions);
@@ -109,8 +109,9 @@ async function initializeNavbar() {
         list.className = "listoptions";
         const user = currentUser ? users.find(u => u.uid === currentUser || u.userId === currentUser || u.id === currentUser) : undefined;
         console.log('currentUser:', currentUser, 'users:', users, 'user found:', user);
+        const name = user?.firstName;
         const lielement = [
-            {name:user?.firstName, url:"Mervie.html"},
+            {name:name, url:"Mervie.html"},
             {name:'COMPTE', url:"set.html"},
             {name:'PRINCIPAL', url:"index.html"},
             {name:'DE SOLEIL', url:"catalogue.html"},
