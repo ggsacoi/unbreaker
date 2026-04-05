@@ -29,7 +29,7 @@ let users = [];
 getUsers().then(data => {
   users = data;
 });
-const currentUser = JSON.parse(localStorage.getItem('ContentUser'));
+const currentUser = localStorage.getItem('ContentUser');
 const currentUser2 = localStorage.getItem('ContentUser');
 
 async function initializeNavbar() {
@@ -107,9 +107,10 @@ async function initializeNavbar() {
         options.className = "options";
         const list = document.createElement("ul");
         list.className = "listoptions";
-        const user = currentUser ? users.find(u => u.uid === currentUser || u.uid === currentUser2 || u.id === currentUser) : currentUser2 ? users.find(u => u.uid === currentUser || u.uid === currentUser2 || u.id === currentUser) : undefined;
+        const user = currentUser ? users.find(u => u.uid === currentUser || u.userId === currentUser || u.id === currentUser) : undefined;
+        console.log('currentUser:', currentUser, 'users:', users, 'user found:', user);
         const lielement = [
-            {name:user?.firstName || user?.name, url:"Mervie.html"},
+            {name:user?.firstName || user?.name || user?.prenom || 'MON COMPTE', url:"Mervie.html"},
             {name:'COMPTE', url:"set.html"},
             {name:'PRINCIPAL', url:"index.html"},
             {name:'DE SOLEIL', url:"catalogue.html"},
