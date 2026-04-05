@@ -15,7 +15,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const currentUser = localStorage.getItem('ContentUser');
+const currentUser = JSON.parse(localStorage.getItem('ContentUser'));
 const currentUser2 = localStorage.getItem('ContentUser');
 
 
