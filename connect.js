@@ -45,7 +45,7 @@ button.addEventListener('click', function () {
             });
         }
         
-        localStorage.setItem('ContentUser', JSON.stringify(user.uid));
+        localStorage.setItem('ContentUser', user.uid);
         window.location.href = 'index.html';
     })
     .catch((error) => {
