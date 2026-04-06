@@ -107,9 +107,9 @@ async function initializeNavbar() {
         options.className = "options";
         const list = document.createElement("ul");
         list.className = "listoptions";
-        const user = currentUser ? users.find(u => u.uid == currentUser || u.userId === currentUser || u.id === currentUser) : undefined;
-        console.log('currentUser:', currentUser, 'users:', users, 'user found:', user);
-        const name = user?.firstName;
+        const user = currentUser ? users.find(u => u.uid === currentUser2 || u.userId === currentUser || u.id === currentUser) : undefined;
+        console.log('currentUser:', currentUser, 'user.uid',user?.uid, 'user found:', user);
+        const name = user.firstName;
         console.log('Extracted name:', name);
         const lielement = [
             {name:name, url:"Mervie.html"},
