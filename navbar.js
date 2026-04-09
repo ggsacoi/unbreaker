@@ -32,7 +32,7 @@ getUsers().then(data => {
 });
 // const userRef = doc(db, "Users", user.uid);
 // const userDoc = await getDoc(userRef);
-const auth = getAuth(app);
+// const auth = getAuth(app);
 const currentUser = localStorage.getItem('ContentUser');
 const currentUser2 = localStorage.getItem('ContentUser');
 
