@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getFirestore, doc, getDocs, collection, addDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCdxlwg8vgSet4ZX7CD9xzc_gsPif5uJbY",
@@ -31,6 +32,7 @@ getUsers().then(data => {
 });
 // const userRef = doc(db, "Users", user.uid);
 // const userDoc = await getDoc(userRef);
+const auth = getAuth(app);
 const currentUser = localStorage.getItem('ContentUser');
 const currentUser2 = localStorage.getItem('ContentUser');
 
