@@ -33,7 +33,7 @@ async function getUsers() {
 
 async function changedata() {
     const users = await getUsers();
-    const user = currentUser ? users.find(u => u.uid === currentUser2 || u.userId === currentUser || u.id === currentUser) : undefined;
+    const user = currentUser ? users.find(u => u.userId === currentUser || u.id === currentUser) : user = currentUser2 ? users.find (u.uid === currentUser2 ) : undefined;
 
     if (user) {
 
