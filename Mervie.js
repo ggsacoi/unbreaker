@@ -15,8 +15,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const currentUser = JSON.parse(localStorage.getItem('ContentUser'));
-const currentUser2 = localStorage.getItem('ContentUser');
+const currentUser = localStorage.getItem('ContentUser');
 
 
 async function getUsers() {
@@ -33,7 +32,7 @@ async function getUsers() {
 
 async function changedata() {
     const users = await getUsers();
-    const user = currentUser ? users.find(u => u.userId === currentUser || u.id === currentUser) : user = currentUser2 ? users.find (u.uid === currentUser2 ) : undefined;
+    const user = currentUser ? users.find(u => u.userId === currentUser || u.id === currentUser || u.uid === currentUser ) : undefined;
 
     if (user) {
 
